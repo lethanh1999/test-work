@@ -1,19 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './new-task.css';
 import { PRIORITY } from '../common/Constant';
-import StorageUtils, {STORAGE_KEYS} from '../common/Storage';
-import TodoList from './TodoList';
 
 const NewTask = ({title, description, dueDate, priority, todoList, setTitle, setDescription, setDueDate, setPriority, setTodoList}) => {
-
   var today = new Date();
   var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
 
   const handleAddNewTask = () => {
-
     const currentTodolist = [...todoList];
-    console.log('currentTodolist',currentTodolist);
-
     if(title && description && dueDate && priority) {
       const newTask = { 
         title,
@@ -22,7 +16,6 @@ const NewTask = ({title, description, dueDate, priority, todoList, setTitle, set
         priority,
         isChecked: false
       }
-      
       currentTodolist.push(newTask);
       setTitle('');
       setDescription('');

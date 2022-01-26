@@ -1,6 +1,4 @@
-import React, {useState} from "react";
-import StorageUtils, { STORAGE_KEYS } from "../common/Storage";
-import { PRIORITY } from "../common/Constant";
+import React from "react";
 
 const TodoList = ({todoList, setTodoList}) => {
 
@@ -30,7 +28,6 @@ const TodoList = ({todoList, setTodoList}) => {
           </div>
           {
             todoList.map((item, index) => {
-              const { title, description, dueDate, priority} = item;
               return(
                 <>
                   <div className="d-flex padding-top-30" key={index}>
@@ -49,9 +46,6 @@ const TodoList = ({todoList, setTodoList}) => {
                         Remove
                     </button>
                   </div>
-                  {/* {
-                    newTask(title, description, dueDate, priority)
-                  } */}
                 </>
               )
             })
